@@ -20,6 +20,7 @@ export class CambiaColore {
       'bg-pink-500 text-white',
       'bg-purple-600 text-white',
     ]
+    
     const nuovoColore = colori[Math.floor(Math.random() * colori.length)]
 
     this.coloreClasse.set(nuovoColore)

@@ -66,6 +66,7 @@
   @if (cardVisibile()) {
     <div class="mt-8 bg-linear-to-br from-gray-800 via-gray-900 to-black p-6 rounded-lg shadow-lg border border-yellow-600 space-y-3">
       <h3 class="text-2xl font-extrabold text-yellow-300 uppercase tracking-wide">{{ nome() }}</h3>
+      <img [src]= "avatarImg()" alt="avatar personaggio" class="rounded-full w-32 h-32 mx-auto shadow-lg">
       <p class="text-sm italic text-gray-400">{{ classe() }} • {{ razza() }} • Livello {{ livello() }}</p>
       <p class="text-base mt-3">{{ descrizione() }}</p>
       <button (click)="reset()"
@@ -74,4 +75,8 @@
       </button>
     </div>
   }
+
 </div>
+
+
+

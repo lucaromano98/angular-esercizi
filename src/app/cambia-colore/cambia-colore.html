@@ -1,0 +1,12 @@
+<div class="p-8 text-center space-y-6">
+  <div [ngClass]="coloreClasse()" class="p-10 rounded-lg transition-all duration-500 shadow-lg">
+    <h1 class="text-3xl font-bold tracking-wide uppercase">Cambia il mio colore 🎨</h1>
+  </div>
+
+  <button
+    (click)="cambiaColore()"
+    class="mt-4 px-6 py-2 rounded-lg bg-linear-to-r from-indigo-500 to-purple-600 text-white font-semibold shadow hover:shadow-xl hover:scale-105 transition-all duration-300"
+  >
+    Cambia Colore!
+  </button>
+</div>

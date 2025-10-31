@@ -1,0 +1,77 @@
+<div class="max-w-2xl mx-auto p-6 space-y-6 text-white bg-gray-900 min-h-screen">
+
+  <h2 class="text-3xl font-bold text-yellow-400 text-center drop-shadow">🛡️ Scheda Personaggio 🧙</h2>
+
+  <!-- FORM -->
+  <form (ngSubmit)="inviaScheda()" class="space-y-4" #form="ngForm">
+
+    <input
+      [ngModel]="nome()"
+      (ngModelChange)="nome.set($event)"
+      name="nome"
+      required
+      class="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white placeholder-gray-400"
+      placeholder="Nome del personaggio" />
+
+    <select
+      [ngModel]="classe()"
+      (ngModelChange)="classe.set($event)"
+      name="classe"
+      required
+      class="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white">
+      <option value="" disabled>Classe</option>
+      <option>Guerriero</option>
+      <option>Mago</option>
+      <option>Ladro</option>
+      <option>Paladino</option>
+      <option>Barbaro</option>
+    </select>
+
+    <select
+      [ngModel]="razza()"
+      (ngModelChange)="razza.set($event)"
+      name="razza"
+      required
+      class="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white">
+      <option value="" disabled>Razza</option>
+      <option>Umano</option>
+      <option>Elfo</option>
+      <option>Nano</option>
+      <option>Orco</option>
+      <option>Mezzelfo</option>
+    </select>
+
+    <input type="number" min="1"
+      [ngModel]="livello()"
+      (ngModelChange)="livello.set($event)"
+      name="livello"
+      class="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white"
+      placeholder="Livello" />
+
+    <textarea
+      [ngModel]="descrizione()"
+      (ngModelChange)="descrizione.set($event)"
+      name="descrizione"
+      rows="3"
+      class="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white placeholder-gray-400"
+      placeholder="Breve descrizione del personaggio..."></textarea>
+
+    <button type="submit"
+      class="w-full py-3 rounded bg-linear-to-r from-red-600 to-yellow-500 text-black font-bold hover:scale-105 transition transform duration-300">
+      Genera la Scheda 🧾
+    </button>
+  </form>
+
+  <!-- CARD -->
+  @if (cardVisibile()) {
+    <div class="mt-8 bg-linear-to-br from-gray-800 via-gray-900 to-black p-6 rounded-lg shadow-lg border border-yellow-600 space-y-3">
+      <h3 class="text-2xl font-extrabold text-yellow-300 uppercase tracking-wide">{{ nome() }}</h3>
+      <p class="text-sm italic text-gray-400">{{ classe() }} • {{ razza() }} • Livello {{ livello() }}</p>
+      <p class="text-base mt-3">{{ descrizione() }}</p>
+      <button (click)="reset()"
+        class="mt-4 px-4 py-2 rounded bg-gray-700 text-white hover:bg-gray-600 transition">
+        🗑️ Cancella scheda
+      </button>
+    </div>
+  }
+</div>

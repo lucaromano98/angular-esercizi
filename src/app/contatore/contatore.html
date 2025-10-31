@@ -1,0 +1,17 @@
+<h2 class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-indigo-600 to-blue-500 drop-shadow-md">
+    CONTATORE
+</h2>
+
+<p class="text-5xl sm:text-6xl font-mono font-semibold text-indigo-700 tracking-tight">
+    Valore Attuale {{ conteggio() }}
+</p>
+
+<button class=" m-3 px-5 py-2 rounded-lg bg-linear-to-r from-blue-500 to-indigo-600 text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300" (click)="incrementa()">
+    Incrementa
+</button>
+<button class=" m-3 px-5 py-2 rounded-lg bg-linear-to-r from-blue-500 to-indigo-600 text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 " (click)="resetta()">
+    Resetta
+</button>
+<button class=" m-3 px-5 py-2 rounded-lg bg-linear-to-r from-blue-500 to-indigo-600 text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 " (click)="decresci()">
+    Decrementa
+</button>
